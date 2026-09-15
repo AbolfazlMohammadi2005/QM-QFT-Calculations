@@ -1,0 +1,493 @@
+\documentclass[12pt,fleqn]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{physics}
+\usepackage{slashed}
+
+\usepackage{pdflscape}
+
+\setlength{\mathindent}{0pt}
+
+\begin{document}
+
+\section*{Geometry for the Curved-Space Dirac Equation}
+
+\section*{Coordinates}
+
+\[
+(t,r,\theta,\phi)
+\]
+
+\section*{Line Element}
+
+\[
+\begin{aligned}
+ds^2
+={}&
+F(r)\,dt^2
+-\frac{1}{F(r)}\,dr^2
+-r^2\,d\theta^2
+-r^2\sin^2\theta\,d\phi^2 .
+\end{aligned}
+\]
+
+\section*{Metric Tensor}
+
+\[
+\begin{aligned}
+g_{\mu\nu} &=
+\begin{pmatrix}
+F{\left(r \right)} & 0 & 0 & 0 \\
+0 & - \frac{1}{F{\left(r \right)}} & 0 & 0 \\
+0 & 0 & - r^{2} & 0 \\
+0 & 0 & 0 & - r^{2} \sin^{2}{\left(\theta \right)}
+\end{pmatrix}
+\end{aligned}
+\]
+
+\section*{Inverse Metric}
+
+\[
+\begin{aligned}
+g^{\mu\nu} &=
+\begin{pmatrix}
+\frac{1}{F{\left(r \right)}} & 0 & 0 & 0 \\
+0 & - F{\left(r \right)} & 0 & 0 \\
+0 & 0 & - \frac{1}{r^{2}} & 0 \\
+0 & 0 & 0 & - \frac{1}{r^{2} \sin^{2}{\left(\theta \right)}}
+\end{pmatrix}
+\end{aligned}
+\]
+
+\section*{Christoffel Symbols}
+
+The Christoffel symbols are defined by
+
+\[
+\Gamma^\rho{}_{\mu\nu}
+=
+\frac{1}{2}
+g^{\rho\sigma}
+\left(
+\partial_\mu g_{\sigma\nu}
++
+\partial_\nu g_{\sigma\mu}
+-
+\partial_\sigma g_{\mu\nu}
+\right).
+\]
+
+\[
+\begin{aligned}
+\Gamma^{0}_{01} &= \frac{\frac{d}{d r} F{\left(r \right)}}{2 F{\left(r \right)}}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\Gamma^{1}_{00} &= \frac{F{\left(r \right)} \frac{d}{d r} F{\left(r \right)}}{2}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\Gamma^{1}_{11} &= - \frac{\frac{d}{d r} F{\left(r \right)}}{2 F{\left(r \right)}}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\Gamma^{1}_{22} &= - r F{\left(r \right)}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\Gamma^{1}_{33} &= - r F{\left(r \right)} \sin^{2}{\left(\theta \right)}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\Gamma^{2}_{12} &= \frac{1}{r}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\Gamma^{2}_{33} &= - \frac{\sin{\left(2 \theta \right)}}{2}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\Gamma^{3}_{13} &= \frac{1}{r}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\Gamma^{3}_{23} &= \frac{1}{\tan{\left(\theta \right)}}
+\end{aligned}
+\]
+
+\section*{Tetrad}
+
+The tetrad is obtained from
+
+\[
+g_{\mu\nu}
+=
+\eta_{ab}
+e^a{}_\mu
+e^b{}_\nu ,
+\qquad
+\eta_{ab}
+=
+\operatorname{diag}(1,-1,-1,-1).
+\]
+
+\[
+\begin{aligned}
+e^a{}_\mu &=
+\begin{pmatrix}
+\sqrt{F{\left(r \right)}} & 0 & 0 & 0 \\
+0 & \frac{1}{\sqrt{F{\left(r \right)}}} & 0 & 0 \\
+0 & 0 & r & 0 \\
+0 & 0 & 0 & r \sin{\left(\theta \right)}
+\end{pmatrix}
+\end{aligned}
+\]
+
+\section*{Inverse Tetrad}
+
+\[
+e^a{}_\mu e^\mu{}_b
+=
+\delta^a{}_b ,
+\qquad
+e^a{}_\mu e^\nu{}_a
+=
+\delta^\nu{}_\mu .
+\]
+
+\[
+\begin{aligned}
+e^\mu{}_a &=
+\begin{pmatrix}
+\frac{1}{\sqrt{F{\left(r \right)}}} & 0 & 0 & 0 \\
+0 & \sqrt{F{\left(r \right)}} & 0 & 0 \\
+0 & 0 & \frac{1}{r} & 0 \\
+0 & 0 & 0 & \frac{1}{r \sin{\left(\theta \right)}}
+\end{pmatrix}
+\end{aligned}
+\]
+
+\section*{Spin Connection}
+
+The spin connection coefficients are
+
+\[
+\omega_\mu{}^{ab}
+=
+e^a{}_\nu
+\left(
+\partial_\mu e^{b\nu}
++
+\Gamma^\nu{}_{\mu\lambda}
+e^{b\lambda}
+\right).
+\]
+
+Only the independent components with \(a<b\) are displayed.
+
+\[
+\begin{aligned}
+\omega_{0}^{01} &= \frac{\frac{d}{d r} F{\left(r \right)}}{2}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\omega_{2}^{12} &= - \sqrt{F{\left(r \right)}}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\omega_{3}^{13} &= - \sqrt{F{\left(r \right)}} \sin{\left(\theta \right)}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\omega_{3}^{23} &= - \cos{\left(\theta \right)}
+\end{aligned}
+\]
+
+\section*{Spinor Connection}
+
+\[
+\Gamma_\mu
+=
+\frac{1}{4}
+\omega_{\mu ab}
+\gamma^a\gamma^b .
+\]
+
+\[
+\begin{aligned}
+\Gamma_{0} &=
+\begin{pmatrix}
+0 & 0 & 0 & - \frac{\frac{d}{d r} F{\left(r \right)}}{8} \\
+0 & 0 & - \frac{\frac{d}{d r} F{\left(r \right)}}{8} & 0 \\
+0 & - \frac{\frac{d}{d r} F{\left(r \right)}}{8} & 0 & 0 \\
+- \frac{\frac{d}{d r} F{\left(r \right)}}{8} & 0 & 0 & 0
+\end{pmatrix}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\Gamma_{1} &= 0
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\Gamma_{2} &=
+\begin{pmatrix}
+\frac{i \sqrt{F{\left(r \right)}}}{4} & 0 & 0 & 0 \\
+0 & - \frac{i \sqrt{F{\left(r \right)}}}{4} & 0 & 0 \\
+0 & 0 & \frac{i \sqrt{F{\left(r \right)}}}{4} & 0 \\
+0 & 0 & 0 & - \frac{i \sqrt{F{\left(r \right)}}}{4}
+\end{pmatrix}
+\end{aligned}
+\]
+
+\clearpage
+\begin{landscape}
+\section*{Gamma{3}}
+
+\[
+\begin{pmatrix}
+0 & \frac{i \left(i \sqrt{F{\left(r \right)}} \sin{\left(\theta \right)} + \cos{\left(\theta \right)}\right)}{4} & 0 & 0 \\
+\frac{i \left(- i \sqrt{F{\left(r \right)}} \sin{\left(\theta \right)} + \cos{\left(\theta \right)}\right)}{4} & 0 & 0 & 0 \\
+0 & 0 & 0 & \frac{i \left(i \sqrt{F{\left(r \right)}} \sin{\left(\theta \right)} + \cos{\left(\theta \right)}\right)}{4} \\
+0 & 0 & \frac{i \left(- i \sqrt{F{\left(r \right)}} \sin{\left(\theta \right)} + \cos{\left(\theta \right)}\right)}{4} & 0
+\end{pmatrix}
+\]
+
+\end{landscape}
+\clearpage
+
+\section*{Flat-Space Gamma Matrices}
+
+The flat-space gamma matrices satisfy
+
+\[
+\left\{
+\gamma^a,
+\gamma^b
+\right\}
+=
+2\eta^{ab}I_4 .
+\]
+
+\[
+\begin{aligned}
+\gamma^{0} &=
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\gamma^{1} &=
+\begin{pmatrix}
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & -1 & 0 & 0 \\
+-1 & 0 & 0 & 0
+\end{pmatrix}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\gamma^{2} &=
+\begin{pmatrix}
+0 & 0 & 0 & - i \\
+0 & 0 & i & 0 \\
+0 & i & 0 & 0 \\
+- i & 0 & 0 & 0
+\end{pmatrix}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\gamma^{3} &=
+\begin{pmatrix}
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & -1 \\
+-1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0
+\end{pmatrix}
+\end{aligned}
+\]
+
+\section*{Curved-Space Gamma Matrices}
+
+The curved-space gamma matrices are
+
+\[
+\gamma^\mu(x)
+=
+e^\mu{}_a(x)
+\gamma^a .
+\]
+
+\[
+\begin{aligned}
+\gamma^{0}(x) &=
+\begin{pmatrix}
+\frac{1}{\sqrt{F{\left(r \right)}}} & 0 & 0 & 0 \\
+0 & \frac{1}{\sqrt{F{\left(r \right)}}} & 0 & 0 \\
+0 & 0 & - \frac{1}{\sqrt{F{\left(r \right)}}} & 0 \\
+0 & 0 & 0 & - \frac{1}{\sqrt{F{\left(r \right)}}}
+\end{pmatrix}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\gamma^{1}(x) &=
+\begin{pmatrix}
+0 & 0 & 0 & \sqrt{F{\left(r \right)}} \\
+0 & 0 & \sqrt{F{\left(r \right)}} & 0 \\
+0 & - \sqrt{F{\left(r \right)}} & 0 & 0 \\
+- \sqrt{F{\left(r \right)}} & 0 & 0 & 0
+\end{pmatrix}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\gamma^{2}(x) &=
+\begin{pmatrix}
+0 & 0 & 0 & - \frac{i}{r} \\
+0 & 0 & \frac{i}{r} & 0 \\
+0 & \frac{i}{r} & 0 & 0 \\
+- \frac{i}{r} & 0 & 0 & 0
+\end{pmatrix}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\gamma^{3}(x) &=
+\begin{pmatrix}
+0 & 0 & \frac{1}{r \sin{\left(\theta \right)}} & 0 \\
+0 & 0 & 0 & - \frac{1}{r \sin{\left(\theta \right)}} \\
+- \frac{1}{r \sin{\left(\theta \right)}} & 0 & 0 & 0 \\
+0 & \frac{1}{r \sin{\left(\theta \right)}} & 0 & 0
+\end{pmatrix}
+\end{aligned}
+\]
+
+\section*{Covariant Derivative}
+
+For a Dirac spinor,
+
+\[
+D_\mu\psi
+=
+\left(
+\partial_\mu+\Gamma_\mu
+\right)\psi .
+\]
+
+\[
+\begin{aligned}
+D_{0}\psi &=
+\begin{pmatrix}
+- \frac{\psi_{4}{\left(t,r,\theta,\phi \right)} \frac{d}{d r} F{\left(r \right)} - 8 \frac{\partial}{\partial t} \psi_{1}{\left(t,r,\theta,\phi \right)}}{8} \\
+- \frac{\psi_{3}{\left(t,r,\theta,\phi \right)} \frac{d}{d r} F{\left(r \right)} - 8 \frac{\partial}{\partial t} \psi_{2}{\left(t,r,\theta,\phi \right)}}{8} \\
+- \frac{\psi_{2}{\left(t,r,\theta,\phi \right)} \frac{d}{d r} F{\left(r \right)} - 8 \frac{\partial}{\partial t} \psi_{3}{\left(t,r,\theta,\phi \right)}}{8} \\
+- \frac{\psi_{1}{\left(t,r,\theta,\phi \right)} \frac{d}{d r} F{\left(r \right)} - 8 \frac{\partial}{\partial t} \psi_{4}{\left(t,r,\theta,\phi \right)}}{8}
+\end{pmatrix}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+D_{1}\psi &=
+\begin{pmatrix}
+\frac{\partial}{\partial r} \psi_{1}{\left(t,r,\theta,\phi \right)} \\
+\frac{\partial}{\partial r} \psi_{2}{\left(t,r,\theta,\phi \right)} \\
+\frac{\partial}{\partial r} \psi_{3}{\left(t,r,\theta,\phi \right)} \\
+\frac{\partial}{\partial r} \psi_{4}{\left(t,r,\theta,\phi \right)}
+\end{pmatrix}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+D_{2}\psi &=
+\begin{pmatrix}
+\frac{i \sqrt{F{\left(r \right)}} \psi_{1}{\left(t,r,\theta,\phi \right)} + 4 \frac{\partial}{\partial \theta} \psi_{1}{\left(t,r,\theta,\phi \right)}}{4} \\
+\frac{- i \sqrt{F{\left(r \right)}} \psi_{2}{\left(t,r,\theta,\phi \right)} + 4 \frac{\partial}{\partial \theta} \psi_{2}{\left(t,r,\theta,\phi \right)}}{4} \\
+\frac{i \sqrt{F{\left(r \right)}} \psi_{3}{\left(t,r,\theta,\phi \right)} + 4 \frac{\partial}{\partial \theta} \psi_{3}{\left(t,r,\theta,\phi \right)}}{4} \\
+\frac{- i \sqrt{F{\left(r \right)}} \psi_{4}{\left(t,r,\theta,\phi \right)} + 4 \frac{\partial}{\partial \theta} \psi_{4}{\left(t,r,\theta,\phi \right)}}{4}
+\end{pmatrix}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+D_{3}\psi &=
+\begin{pmatrix}
+\frac{- \sqrt{F{\left(r \right)}} \psi_{2}{\left(t,r,\theta,\phi \right)} \sin{\left(\theta \right)} + i \psi_{2}{\left(t,r,\theta,\phi \right)} \cos{\left(\theta \right)} + 4 \frac{\partial}{\partial \phi} \psi_{1}{\left(t,r,\theta,\phi \right)}}{4} \\
+\frac{\sqrt{F{\left(r \right)}} \psi_{1}{\left(t,r,\theta,\phi \right)} \sin{\left(\theta \right)} + i \psi_{1}{\left(t,r,\theta,\phi \right)} \cos{\left(\theta \right)} + 4 \frac{\partial}{\partial \phi} \psi_{2}{\left(t,r,\theta,\phi \right)}}{4} \\
+\frac{- \sqrt{F{\left(r \right)}} \psi_{4}{\left(t,r,\theta,\phi \right)} \sin{\left(\theta \right)} + i \psi_{4}{\left(t,r,\theta,\phi \right)} \cos{\left(\theta \right)} + 4 \frac{\partial}{\partial \phi} \psi_{3}{\left(t,r,\theta,\phi \right)}}{4} \\
+\frac{\sqrt{F{\left(r \right)}} \psi_{3}{\left(t,r,\theta,\phi \right)} \sin{\left(\theta \right)} + i \psi_{3}{\left(t,r,\theta,\phi \right)} \cos{\left(\theta \right)} + 4 \frac{\partial}{\partial \phi} \psi_{4}{\left(t,r,\theta,\phi \right)}}{4}
+\end{pmatrix}
+\end{aligned}
+\]
+
+\section*{Curved-Space Dirac Equation}
+
+The curved-space Dirac equation is
+
+\[
+\boxed{
+\left[
+i\gamma^\mu(x)
+\left(
+\partial_\mu+\Gamma_\mu
+\right)
+-m
+\right]
+\psi(x)
+=
+0
+}
+\]
+
+\end{document}
